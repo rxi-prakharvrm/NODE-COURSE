@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/rxi-prakharvrm/NODE-COURSE#readme",
   "dependencies": {
+    "chalk": "^2.4.1",
     "validator": "^13.11.0"
   }
 }

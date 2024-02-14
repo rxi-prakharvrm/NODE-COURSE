@@ -1,17 +1,17 @@
-const validator = require('validator');
 // const getNotes = require('./notes.js');
 
 // const msg = getNotes();
-// console.log(msg);
 
-// correct email
-console.log(validator.isEmail("foo@gmail.com"));
+const chalk = require('chalk');
 
-// incorrect email
-console.log(validator.isEmail("foo@com"));
+console.log(chalk.green("Success!\n"));
+console.log(chalk.red("Access Denied!\n"));
 
-// correct url
-console.log(validator.isURL("https://www.google.com"));
+console.log(chalk.bold.green("Success!\n"));
+console.log(chalk.bold.red("Access Denied!\n"));
 
-// incorrect url
-console.log(validator.isURL("ht://www.google.com"));
+console.log(chalk.bold.green.inverse("Success!\n"));
+console.log(chalk.bold.red.inverse("Access Denied!\n"));
+
+console.log(chalk.green.inverse("Success!\n"));
+console.log(chalk.red.inverse("Access Denied!\n"));
