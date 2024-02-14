@@ -1,10 +1,5 @@
-const fs = require('fs');
+const getNotes = require('./notes.js');
 
-// write the file
-fs.writeFileSync('notes.txt', 'This file was created by Node.js!');
+const msg = getNotes();
 
-// overwrite the file
-fs.writeFileSync('notes.txt', 'File has been overwritten!');
-
-// append to the file
-fs.appendFileSync('notes.txt', ' This is the appended text!');
+console.log(msg);
