@@ -1,23 +1,19 @@
 const chalk = require('chalk');
+const getNotes = require('./notes.js');
 
-const msg = 'Hello world';
+const msg = getNotes();
+console.log(msg);
 
-// applying styles
-console.log(`Color: ${chalk.blue(msg)}`);
-console.log(`Background Color: ${chalk.bgRed(msg)}`);
-console.log(`Underline: ${chalk.underline(msg)}`);
-console.log(`Bold: ${chalk.bold(msg)}`);
-console.log(`Inverse: ${chalk.inverse(msg)}`);
-console.log(`Color: ${chalk.hex('#DEADED').bold(msg)}`);
-console.log(`Color: ${chalk.rgb(123, 45, 67).bold(msg)}`);
-console.log(`Color: ${chalk.hsl(123, 45, 67).bold(msg)}`);
-console.log(`Color: ${chalk.keyword('orange').bold(msg)}`);
+console.log(process.argv);
+console.log(process.argv[0]); // Path to node executable
+console.log(process.argv[1]); // Path to the file being executed
+console.log(process.argv[2]); // First argument passed in the command line
+// console.log(process.argv[3]); // Undefined if only one argument is passed
 
-// chaining styles
-console.log(chalk.hex('#FFFFFF').bold.inverse('Hello world!'));
+const command = process.argv[2];
 
-// others (in latest versions of the chalk not in @2.4.1)
-// console.log(error('Error!'));
-// console.log(warning('Warning!'));
-// console.log(info('Info!'));
-// console.log(success('Success!'));
+if (command === 'add') {
+    console.log('Adding note!');
+} else if (command === 'remove') {        
+    console.log('Removing note!');
+}
