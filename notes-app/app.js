@@ -1,19 +1,44 @@
 const chalk = require('chalk');
+const yargs = require('yargs');
 const getNotes = require('./notes.js');
 
-const msg = getNotes();
-console.log(msg);
+// customize yargs version
+// yargs.version('1.1.0');
 
-console.log(process.argv);
-console.log(process.argv[0]); // Path to node executable
-console.log(process.argv[1]); // Path to the file being executed
-console.log(process.argv[2]); // First argument passed in the command line
-// console.log(process.argv[3]); // Undefined if only one argument is passed
+// create add command
+yargs.command({
+    command: 'add',
+    describe: 'Add a new note',
+    handler: function() {
+        console.log('Adding a new note!');
+    }
+})
 
-const command = process.argv[2];
+// create remove command
+yargs.command({
+    command: 'remove',
+    describe: 'Remove a note',
+    handler: function() {
+        console.log('Removing the note!');
+    }
+})
 
-if (command === 'add') {
-    console.log('Adding note!');
-} else if (command === 'remove') {        
-    console.log('Removing note!');
-}
+// create read command
+yargs.command({
+    command: 'read',
+    describe: 'Read a note',
+    handler: function() {
+        console.log('Reading the note!');
+    }
+})
+
+// create list command
+yargs.command({
+    command: 'list',
+    describe: 'List your notes',
+    handler: function() {
+        console.log('Listing out all notes!');
+    }
+})
+
+console.log(yargs.argv);
